@@ -181,7 +181,7 @@ class CopilotSyncClient:
         }
 
         msg_str = json.dumps(msg)
-        logger.debug(f"--> SEND: {msg_str}\n")
+        logger.debug(f"\n--> SEND: {msg_str}")
 
         await self._transport.write_message(msg_str)
         return rpc_id
@@ -196,7 +196,7 @@ class CopilotSyncClient:
         }
 
         msg_str = json.dumps(msg)
-        logger.debug(f"---> SEND: {msg_str}\n")
+        logger.debug(f"\n---> SEND: {msg_str}")
 
         await self._transport.write_message(msg_str)
 
@@ -212,7 +212,7 @@ class CopilotSyncClient:
             if not line:
                 break # EOF or connection closed
 
-            logger.debug(f"<--- RECV: {line}")
+            logger.debug(f"\n<--- RECV: {line}")
             try:
                 msg = json.loads(line)
             except Exception as e:

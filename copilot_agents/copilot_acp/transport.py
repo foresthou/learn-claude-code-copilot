@@ -56,10 +56,10 @@ class StdioTransport(Transport):
         self._cmd = [
             sever_path, "--stdio", "--headless",
             "--no-auto-update",
-            "--excluded-tools=*",
+            "--excluded-tools=bash,read,create,edit",
             "--deny-tool=bash",
             "--deny-tool=read",
-            "--deny-tool=write",
+            "--deny-tool=create",
             "--deny-tool=edit",
         ]
 

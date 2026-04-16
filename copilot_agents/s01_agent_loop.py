@@ -32,10 +32,10 @@ except ImportError:
 
 from anthropic import Anthropic
 from dotenv import load_dotenv
+load_dotenv(override=True)
 
 from copilot_acp.copilot_sync_client import get_copilot_client
 
-load_dotenv(override=True)
 
 MODEL = os.environ["MODEL_ID"]
 
